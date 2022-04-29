@@ -22,7 +22,7 @@ class RedditToTwitter:
 
     def _connect_reddit(self):
         if Path(f'{Path(__file__).parents[0]}/reddit_token.json').is_file():
-            with open('reddit_token.json', 'r') as reddit_token:
+            with open(f'{Path(__file__).parents[0]}/reddit_token.json', 'r') as reddit_token:
                 data = json.load(reddit_token)
                 client_id = data["client_id"]
                 client_secret = data["client_secret"]
@@ -41,7 +41,7 @@ class RedditToTwitter:
 
     def _connect_twitter(self):
         if Path(f'{Path(__file__).parents[0]}/twitter_token.json').is_file():
-            with open('twitter_token.json', 'r') as reddit_token:
+            with open(f'{Path(__file__).parents[0]}/twitter_token.json', 'r') as reddit_token:
                 data = json.load(reddit_token)
                 access_token = data["access_token"]
                 access_secret = data["access_secret"]
