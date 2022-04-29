@@ -56,7 +56,7 @@ class RedditToTwitter:
     def _build_text(self, text):
         text = re.sub('[\(\[].*?[\)\]]', "", text)
         if self._hashtag and Path(f'{Path(__file__).parents[0]}/hashtag.txt').is_file():
-            with open('hashtag.txt', 'r') as hashtag_file:
+            with open(f'{Path(__file__).parents[0]}/hashtag.txt', 'r') as hashtag_file:
                 hashtag_list = hashtag_file.read().split('\n')
                 text += f' #{random.choice(hashtag_list)}'
         text = re.sub('\\s+', ' ', text)
