@@ -60,7 +60,7 @@ class RedditToTwitter:
                 hashtag_list = hashtag_file.read().split('\n')
                 text += f' #{random.choice(hashtag_list)}'
         text = re.sub('\\s+', ' ', text)
-        return text
+        return text.strip()
 
     def _get_reddit_post(self):
         subreddit = self._reddit.subreddit(self._subreddit)
